@@ -1,0 +1,29 @@
+UserScore = 0
+ComputerScore = 0
+Game = ['R','P','S']
+for i in range (0,3):
+  Choice = rd.choice(Game)
+  User = input ("enter r for rock,enter s for scissor,enter p for paper:").upper()
+  if (User == 'R'and Choice == 'S') or (User == 'P' and Choice == 'R') or (User == 'S' and Choice == 'P'):
+   print(" YOU WIN")
+   UserScore += 1 
+   print (UserScore)
+  elif (User == 'S'and Choice == 'R') or (User =='R'and Choice == 'P') or (User == 'P'and Choice == 'S'):
+   print("YOU LOSE")
+   ComputerScore += 1
+   print(ComputerScore)
+  elif(User == Choice):
+   print("TIE")
+   UserScore += 1
+   ComputerScore += 1
+   print(UserScore)
+   print(ComputerScore)
+  else:
+   print("invalid input")
+  print(Choice)
+if UserScore > ComputerScore:
+  print("YOU WIN")
+elif UserScore < ComputerScore:
+  print("YOU LOSE")
+else:
+  print("TIE")
