@@ -1,0 +1,13 @@
+import random as rd
+Game = ['R','P','S']
+Choice = rd.choice(Game)
+User = input ("enter r for rock,enter s for scissor,enter p for paper:").upper()
+if (User == 'R'and Choice == 'S') or (User == 'P' and Choice == 'R') or (User == 'S' and Choice == 'P'):
+  print(" YOU WIN")
+elif (User == 'S'and Choice == 'R') or (User =='R'and Choice == 'P') or (User == 'P'and Choice == 'S'):
+  print("YOU LOSE")
+elif(User == Choice):
+  print("TIE")
+else:
+  print("invalid input")
+print(Choice)
