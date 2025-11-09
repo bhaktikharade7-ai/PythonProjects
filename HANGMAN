@@ -1,0 +1,35 @@
+import random as rd
+Fruits = ["apple", "banana", "cherry", "kiwi","mango" ]
+word = rd.choice(Fruits)
+Lives = 6
+Guessed_letters = []
+print("Welcome to Hangman!")
+print("Guess the fruit! You have 6 lives.")
+Display = " "
+for i in word:
+  Display += "_ "
+print(Display)
+while Lives >= 1:
+  Guess = input("Guess a letter:").lower()
+  if Guess in Guessed_letters:
+    print("You guessed it already")
+    continue
+  else:
+    Guessed_letters.append(Guess)
+  if Guess in word:
+    print("Correct guess")
+    for i in range (len(word)):
+       if word [i]== Guess:
+          Display = Display.split()
+          Display[i] = Guess
+          Display = " ".join(Display)
+    print(Display)
+  else:
+    print("Incorrect guess")
+    Lives -= 1
+    print("You have" ,Lives, " lives left")
+  if "_" not in Display:
+    print("Congratulations! YOU WIN")
+    break
+if '_' in Display:
+  print("YOU LOST The word was:",word)
