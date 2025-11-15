@@ -1,0 +1,49 @@
+import random as rd
+
+print("WELCOME TO QUIZ WORLD \nLET'S TEST YOUR BRAIN \nANSWER ALL QUESTIONS AND KNOW YOUR SCORE")
+
+questions = [
+    {
+        'question': "Which organelle is called power house of cell?",
+        'options': ['nucleus','mitochondria','cell wall','cytoplasm'],
+        'correct': 'b'
+    },
+    {
+        'question': "Which of the following is a model organism?",
+        'options': ['cat','dog','chick','sheep'],
+        'correct': 'c'
+    },
+    {
+        'question': "Which organelle is responsible for packaging?",
+        'options': ['ribosome','Golgi apparatus','ER','cytoplasm'],
+        'correct': 'b'
+    }
+]
+
+decision = input("Enter 'p' to continue \nEnter 'e' to exit: ")
+
+if decision == 'p':
+    print("ENJOY YOUR GAME!!")
+    score = 0
+
+    for i in range(0,3):       
+        a = rd.choice(questions)
+        print(a['question'])
+        print('a)', a['options'][0])
+        print('b)', a['options'][1])
+        print('c)', a['options'][2])
+        print('d)', a['options'][3])
+
+        answer = input("Enter your answer (a/b/c/d): ")
+
+        if answer == a['correct']:
+            print("Correct!")
+            score += 1
+        else:
+            print("Wrong!")
+            print("Correct answer is:", a['correct'])
+
+    print("Your final score is:", score,'/',len(questions))
+
+else:
+    print("Thank you, visit again!")
