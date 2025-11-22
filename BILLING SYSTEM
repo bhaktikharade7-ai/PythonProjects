@@ -1,0 +1,50 @@
+print("Welcome to Grocery Store Billing System")
+
+items = {
+    "apple": 50,
+    "banana": 30,
+    "milk": 25,
+    "bread": 40,
+    "rice": 60
+}
+
+cart = {}
+total = 0
+while True:
+    print("Items available:")
+    for name in items:
+        print(name, "-", items[name])
+
+    item = input("Enter item name (or 'done' to stop): ")
+
+    if item == "done":
+        break
+
+    if item in items:
+        qty = int(input("Enter quantity: "))
+        cart[item] = qty
+    else:
+        print("Invalid item, try again.")
+print("Your Cart:")
+for item in cart:
+    amount = items[item] * cart[item]
+    print(item, "-", cart[item], "=", amount)
+    total = total + amount
+print("Total =", total)
+if total >= 500:
+    discount = total * 0.10
+elif total >= 300:
+    discount = total * 0.05
+else:
+    discount = 0
+final = total - discount
+print("Discount =", discount)
+print("Final Amount =", final)
+print(" Receipt: ")
+for item in cart:
+    print(item, cart[item], "x", items[item], "=", items[item] * cart[item])
+print("Total =", total)
+print("Discount =", discount)
+print("Final Amount =", final)
+print("Thank you for Visiting!")
+print("We hope to see you again soon.")
